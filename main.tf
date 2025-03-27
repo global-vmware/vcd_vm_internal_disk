@@ -21,7 +21,7 @@ locals {
     for k in local.sorted_keys : local.disk_map[k]
   ]
 
-  selected_disk = local.sorted_disks[var.disk_index]
+  selected_disk = local.sorted_disks[var.disk_index - 1]
 }
 
 resource "vcd_vm_internal_disk" "int_disk" {

@@ -33,9 +33,13 @@ variable "internal_disks" {
 }
 
 variable "disk_index" {
-  description = "Which disk to apply from the sorted list"
+  description = "1-based index of the disk to create from the sorted internal_disks list"
   type        = number
-  default     = 0
+
+  validation {
+    condition     = var.disk_index >= 1
+    error_message = "disk_index must be >= 1"
+  }
 }
 
 variable "vm_internal_disk_allow_vm_reboot" {
