@@ -1,6 +1,6 @@
-# VMware Cloud Director Internal Disk Terraform Module
+# Virtual Machine Internal Disk Terraform Module
 
-This Terraform module provisions internal disks for a Virtual Machine (VM) in VMware Cloud Director (VCD). It attaches internal disks to an existing VM within a vApp in VCD.
+This Terraform module provisions internal disks into a Virtual Machine (VM) within a VMware Cloud Director (VCD) Environment. This module can be used to provision internal disks into [Rackspace Technology SDDC Flex](https://www.rackspace.com/cloud/private/software-defined-data-center-flex) VCD Data Center Regions.
 
 ## Requirements
 
