@@ -25,17 +25,16 @@ locals {
 }
 
 resource "vcd_vm_internal_disk" "int_disk" {
-  count = length(var.internal_disks)
-
   org             = var.vdc_org_name
   vdc             = var.vdc_name
   vapp_name       = var.vapp_name
   vm_name         = var.vm_name
-  size_in_mb      = var.internal_disks[count.index].size_in_mb
-  bus_type        = var.internal_disks[count.index].bus_type
-  bus_number      = var.internal_disks[count.index].bus_number
-  unit_number     = var.internal_disks[count.index].unit_number
-  iops            = var.internal_disks[count.index].iops
-  storage_profile = var.internal_disks[count.index].storage_profile
+  size_in_mb      = local.selected_disk.size_in_mb
+  bus_type        = local.selected_disk.bus_type
+  bus_number      = local.selected_disk.bus_number
+  unit_number     = local.selected_disk.unit_number
+  iops            = local.selected_disk.iops
+  storage_profile = local.selected_disk.storage_profile
   allow_vm_reboot = var.vm_internal_disk_allow_vm_reboot
 }
+
