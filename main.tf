@@ -27,6 +27,8 @@ resource "vcd_vm_internal_disk" "int_disk" {
   bus_type        = var.internal_disks[count.index].bus_type
   bus_number      = var.internal_disks[count.index].bus_number
   unit_number     = var.internal_disks[count.index].unit_number
+  iops            = var.internal_disks[count.index].iops
+  storage_profile = var.internal_disks[count.index].storage_profile
 }
 
 

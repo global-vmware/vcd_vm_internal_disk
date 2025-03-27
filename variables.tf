@@ -23,7 +23,7 @@ variable "internal_disks" {
     bus_number      = number
     unit_number     = number
     iops            = number
-    storage_profile = optional(string)
+    storage_profile = string
   }))
 }
 
